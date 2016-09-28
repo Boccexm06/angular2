@@ -5,9 +5,6 @@ import { HttpModule }    from '@angular/http';
 
 import './rxjs-extensions';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
@@ -22,7 +19,6 @@ import { routing }              from './app.routing';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
     routing
   ],
   declarations: [

@@ -7,9 +7,12 @@ import { Hero }           from './hero';
 @Injectable()
 export class HeroSearchService {
   constructor(private http: Http) {}
+
+  private heroesUrl = 'https://vps321788.ovh.net';  // URL to web api
+
   search(term: string): Observable<Hero[]> {
     return this.http
-               .get(`app/heroes/?name=${term}`)
-               .map((r: Response) => r.json().data as Hero[]);
+               .get(`${this.heroesUrl}/api/v1/heroes/?title=${term}`)
+               .map((r: Response) => r.json() as Hero[]);
   }
 }
